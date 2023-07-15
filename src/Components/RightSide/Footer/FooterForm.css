@@ -1,0 +1,56 @@
+.footer-form-wrapper {
+    width: 50%;
+    margin: 5% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.name-row {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+form button {
+    width: 40%;
+    text-align: center;
+    padding: 2%;
+    margin: 8% 60% 0 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px 8px rgba(255, 255, 255, 0.4);
+    transition: all 0.5s ease;
+}
+
+form button:hover {
+    box-shadow: none;
+    border: 2px solid #fff;
+    background-color: #000;
+    color: #fff;
+}
+
+.error {
+    color: red;
+    margin: 2% auto;
+}
+
+@media screen and (width <= 800px) {
+    .footer-form-wrapper {
+        width: 70%;
+    }
+}
+
+@media screen and (width <= 500px) {
+    .footer-form-wrapper {
+        width: 80%;
+    }
+
+    .name-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

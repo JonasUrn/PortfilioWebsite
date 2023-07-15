@@ -1,0 +1,24 @@
+.picture-wrapper {
+  margin: auto;
+  width: 40%;
+  aspect-ratio: 1 / 1;
+  border-radius: 90px;
+  background-image: url("../../../public/profilepicture.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Styles for smaller screen */
+
+@media screen and (width <= 1300px) {
+  .picture-wrapper {
+    width: 50%;
+  }
+}
+
+@media screen and (width <= 1100px) {
+  .picture-wrapper {
+    width: 60%;
+  }
+}

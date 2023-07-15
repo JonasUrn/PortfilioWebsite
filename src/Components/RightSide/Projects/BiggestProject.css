@@ -1,0 +1,74 @@
+.biggest-project-title {
+  display: block;
+  font-weight: bold;
+}
+
+.biggest-project-card {
+  border-radius: 45px;
+  background-color: #000;
+  width: 80%;
+  aspect-ratio: 3 /1;
+  margin: 5% auto;
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles for large screen */
+
+.bp-info {
+  width: 70%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bp-logo-wrapper {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bp-logo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  border-radius: 90px;
+}
+
+/* Styles for small screen */
+
+.bp-info-s {
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.biggest-project-card-s {
+  border-radius: 45px;
+  background-color: #000;
+  width: 80%;
+  aspect-ratio: 3 /1;
+  margin: 5% auto;
+  padding: 2% 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Styles for adaptability */
+
+@media screen and (width <= 800px) {
+  .biggest-project-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,39 @@
+.about-me-section {
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.about-me-section h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: auto;
+}
+
+.about-me-section hr {
+  margin-top: 2%;
+  border: none; /* Removes the default border style */
+  border-top: 2px solid #fff;
+  width: 100%;
+}
+
+.comment {
+  color: #fff;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media screen and (width <= 800px) {
+  .about-me-section {
+    margin-top: 10%;
+  }
+
+  .about-me-section hr {
+    width: 90%;
+  }
+}

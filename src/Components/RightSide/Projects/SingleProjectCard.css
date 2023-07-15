@@ -1,0 +1,103 @@
+:root {
+  --laptop: 2100px;
+}
+
+/* These are the default styles applied to a desktop */
+
+.project-card {
+  max-width: 100%;
+  border-radius: 45px;
+  box-shadow: 16px 19px 19px -5px rgba(0, 0, 0, 0.81);
+  -webkit-box-shadow: 16px 19px 19px -5px rgba(255, 255, 255, 0.81);
+  background-color: #000;
+  aspect-ratio: 3 / 1;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.container:hover > .project-card {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.project-card-front,
+.project-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.project-card-back {
+  max-height: 100%;
+  overflow: hidden;
+  transform: rotateY(180deg);
+}
+
+.project-details-wrapper {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: 2%;
+}
+
+.image-banner {
+  height: 100px;
+  margin: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 90px;
+}
+
+.project-card h3 {
+  margin: 2%;
+}
+
+.project-card h5 {
+  margin: 2%;
+}
+
+.project-card p {
+  width: 100%;
+  height: 100%;
+  margin: 2rem 10%;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.project-card button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@media screen and (width <= 2100px) {
+  .project-card {
+    height: 9rem;
+  }
+}
+
+@media screen and (width <= 800px) {
+  .container {
+    width: 80%;
+    padding: 5%;
+  }
+}
+
+@media screen and (width <= 500px) {
+  .project-card {
+    width: 100%;
+  }
+}

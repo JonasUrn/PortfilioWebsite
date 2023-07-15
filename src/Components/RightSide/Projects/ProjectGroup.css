@@ -1,0 +1,32 @@
+.project-group-wrapper {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.project-group-title {
+  display: block;
+  font-weight: bold;
+}
+
+.project-group {
+  margin: 5rem 0;
+}
+
+@media screen and (width <= 800px) {
+  .project-group {
+    margin: 20% auto;
+  }
+
+  .project-group-wrapper {
+    margin: 0;
+    text-align: center;
+    grid-template-columns: 1fr; 
+  }
+
+  .project-group-title {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
