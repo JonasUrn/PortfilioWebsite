@@ -5,6 +5,8 @@ import "./EducationContent.css";
 
 import { languageCtx } from "../../store/LanguageContext";
 
+import MaturityCertificate from "../../../Assets/brandos_atestatas.pdf"
+
 const englishEducationList = (
   <ul>
     <li>Primary School: Šiauliai Centro Pradinė primary school</li>
@@ -35,9 +37,9 @@ const englishCaption = (
     Not only did I graduated on top of my school having perfect score in
     subjects of mathematics, English and Lithuanian, I also had perfect grades
     in all subjects while only having one non-perfect exam score of 93/100 score
-    in IT examination. I addition to this during my years in middle school and Highschool I
-    also won multiple region-wide and state-wide competition in the fields of
-    math, physics and geography.
+    in IT examination. I addition to this during my years in middle school and
+    Highschool I also won multiple region-wide and state-wide competition in the
+    fields of math, physics and geography.
   </p>
 );
 
@@ -45,9 +47,33 @@ const lithuanianCaption = (
   <p className="caption-education">
     Taip pat aš ne tik baigiau mokyklą turėdamas 10 iš visų mokomųjų dalykų,
     išlaikiau lietuvių kalbos ir literatūros, anglų kalbos ir matematikos
-    egzaminus 100 balų (IT egzamino rezultatas 93/100), bet ir laimėjau daug miesto bei regiono konkursų
-    matematikos, fizikos bei geografijos srityse.
+    egzaminus 100 balų (IT egzamino rezultatas 93/100), bet ir laimėjau daug
+    miesto bei regiono konkursų matematikos, fizikos bei geografijos srityse.
   </p>
+);
+
+const lithuanianExamResults = (
+  <>
+    <p className="exam-title">Brandos egzaminų rezultatai:</p>
+    <ul className="exam-list">
+      <li>Matematika: 100 / 100</li>
+      <li>Anglų  kalba: 100 / 100</li>
+      <li>Lietuvių kalba ir literatūra: 100 / 100</li>
+      <li>IT: 93 / 100</li>
+    </ul>
+  </>
+);
+
+const englishExamResults = (
+  <>
+    <p className="exam-title">Final exams results:</p>
+    <ul className="exam-list">
+      <li>Math: 100 / 100</li>
+      <li>English: 100 / 100</li>
+      <li>Lithuanian language and literature: 100 / 100</li>
+      <li>IT: 93 / 100</li>
+    </ul>
+  </>
 );
 
 const EducationContent = () => {
@@ -62,22 +88,34 @@ const EducationContent = () => {
 
   const diplomaContent = isEnglish ? (
     <p className="caption-education">
-      Press <span className="underline">HERE</span> to view my 'Brandos
+      Press <span className="underline" onClick={certificateDownloadHandler}>HERE</span> to view my 'Brandos
       atestatas' (Maturity Certificate - diploma given upon finishing
       highschool)
     </p>
   ) : (
     <p className="caption-education">
-      Spauskite <span className="underline">ČIA</span> norėdami peržiūrėti
+      Spauskite <span className="underline" onClick={certificateDownloadHandler}>ČIA</span> norėdami peržiūrėti
       Brandos Atestatą.
     </p>
   );
+
+  const examContent = isEnglish ? englishExamResults : lithuanianExamResults;
+
+  function certificateDownloadHandler() {
+    const link = document.createElement("a");
+    link.href = MaturityCertificate;
+    link.download = `${MaturityCertificate}.pdf`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.click();
+  }
 
   return (
     <div className="about-me-content-wrapper" id="education">
       <h3>{isEnglish ? "Education" : "Išsilavinimas"}</h3>
       {educationList}
       {captionContent}
+      {examContent}
       {diplomaContent}
     </div>
   );

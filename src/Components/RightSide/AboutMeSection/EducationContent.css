@@ -7,4 +7,16 @@
 
 .underline {
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.exam-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1% auto 1% 2%;
+}
+
+.exam-list {
+    list-style-type: disc !important;
+    margin-top: 0;
 }

@@ -1,20 +1,21 @@
 import "./SingleProjectCard.css";
 
-const SingleProjectCard = (props) => {
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../utils/motion";
 
+const SingleProjectCard = (props) => {
   const visitGitHubHandler = (githubUrl) => {
-    window.open(githubUrl, '_blank');
-  }
+    window.open(githubUrl, "_blank");
+  };
 
   return (
     <div className="container">
-      <div className="project-card" onClick={() => visitGitHubHandler(props.githubUrl)}>
+      <div
+        className="project-card"
+        onClick={() => visitGitHubHandler(props.githubUrl)}
+      >
         <div className="project-card-front">
-          <img
-            src={props.image}
-            alt="project"
-            className="image-banner"
-          />
+          <img src={props.image} alt="project" className="image-banner" />
           <div className="project-details-wrapper">
             <h3>{props.title}</h3>
             <h5>{props.details}</h5>

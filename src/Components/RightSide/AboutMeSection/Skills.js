@@ -8,10 +8,18 @@ import { languageCtx } from "../../store/LanguageContext";
 import PythonCertificate from "../../../Assets/python.pdf";
 import FlutterCertificate from "../../../Assets/flutter.pdf";
 
+import SkillsTimeline from "./SkillsTimeline";
+
 const courses = (isEnglish) => {
   const blockchainCourse = isEnglish
     ? "Various YouTube courses on blockchain development"
     : "Įvairūs kursai YouTube platformoje";
+  const solidityCaption = isEnglish
+    ? "(Only the very basics)"
+    : "(Tik pradmenys)";
+  const reactCaption = isEnglish
+    ? "(Currently in learning process)"
+    : "(Dabar mokausi)";
   return [
     {
       course: "100 Days of Code: The Complete Python Pro Bootcamp for 2023",
@@ -19,6 +27,7 @@ const courses = (isEnglish) => {
       otherSkills: ["Bootstrap", "Flask"],
       logoPath: "../python-logo-removebg-preview.png",
       certificate: PythonCertificate,
+      caption: null,
     },
     {
       course: "Flutter & Dart - The Complete Guide",
@@ -26,13 +35,7 @@ const courses = (isEnglish) => {
       otherSkills: ["Firebase", "Android & IOS development"],
       logoPath: "../flutter-logo.png",
       certificate: FlutterCertificate,
-    },
-    {
-      course: "React - The Complete Guide 2023 (incl. React Router & Redux)",
-      programmingLanguages: ["Javascript", "HTML", "CSS"],
-      otherSkills: ["React"],
-      logoPath: "../react-logo-removebg-preview.png",
-      certificate: null,
+      caption: null,
     },
     {
       course: blockchainCourse,
@@ -40,6 +43,15 @@ const courses = (isEnglish) => {
       otherSkills: ["Blockchain technology"],
       logoPath: "../solidity-logo-removebg-preview.png",
       certificate: null,
+      caption: solidityCaption,
+    },
+    {
+      course: "React - The Complete Guide 2023 (incl. React Router & Redux)",
+      programmingLanguages: ["Javascript", "HTML", "CSS"],
+      otherSkills: ["React"],
+      logoPath: "../react-logo-removebg-preview.png",
+      certificate: null,
+      caption: reactCaption,
     },
   ];
 };
@@ -97,7 +109,7 @@ const Skills = () => {
           ? "Courses finished and programming skills"
           : "Baigti programavimo kursai bei įgūdžiai"}
       </h3>
-      <table>
+      {/* <table>
         <thead>
           <tr>
             {!isSmall && <th className="logo-cell"></th>}
@@ -148,7 +160,8 @@ const Skills = () => {
             );
           })}
         </tbody>
-      </table>
+      </table> */}
+      <SkillsTimeline skills={courses} isEnglish={isEnglish} />
       {captionContent(isEnglish)}
     </div>
   );

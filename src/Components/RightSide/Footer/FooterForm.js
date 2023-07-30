@@ -5,41 +5,81 @@ import { useRef, useState, useContext } from "react";
 
 import { languageCtx } from "../../store/LanguageContext";
 import Input from "./Input";
+import emailjs from "@emailjs/browser";
 
 const emptyValidation = (value) => {
   return value.trim().length > 0;
 };
 
-const sendEmail = (subject, body) => {
-  window.open(`mailto:jonasurnezius@gmail.com?subject=${subject}&body=${body}`);
+const emailValidation = (value) => {
+  return value.trim().length > 0 && value.includes("@");
 };
 
 const FooterForm = () => {
   const [formIsValid, setFormIsValid] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const nameRef = useRef();
-  const surnameRef = useRef();
+  const emailRef = useRef();
   const subjectRef = useRef();
   const messageRef = useRef();
 
   const languageContext = useContext(languageCtx);
   const isEnglish = languageContext.isEnglish;
 
-  const submissionHandler = (event) => {
+  const sendEmail = async (subject, body, email, name, isEnglish) => {
+    setLoading(true);
+    return await emailjs
+      .send(
+        "service_k0f2nlj",
+        "template_r7l9ns3",
+        {
+          topic: subject,
+          message: body,
+          from_name: name,
+          to_email: "jonasurnezius@gmail.com",
+          from_email: email,
+        },
+        "GgGyJabwB98y8KGL2"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          window.alert(
+            isEnglish
+              ? "Thank you! I will reach out to you as soon as possible."
+              : "Ačiū! Su Jumis susisieksiu kiek įmanoma greičiau"
+          );
+          return true;
+        },
+        (error) => {
+          console.log(error);
+          setLoading(false);
+          window.alert(
+            isEnglish
+              ? "Something went wrong. Please try again later. If the problem persists, send email to jonasurnezius@gmail.com from your email provider."
+              : "Ivyko klaida. Bandykite vėliau. Jei problema kartosis, išsiųskite laišką adresu jonasurnezius@gmail.com naudodami savo el. pašto tiekėją."
+          );
+          return false;
+        }
+      );
+  };
+
+  const submissionHandler = async (event) => {
     event.preventDefault();
 
     const enteredName = nameRef.current.value;
-    const enteredSurname = surnameRef.current.value;
+    const enteredEmail = emailRef.current.value;
     const enteredTopic = subjectRef.current.value;
     const enteredMessage = messageRef.current.value;
 
     const formValidityState = emptyValidation(
-      enteredName + enteredSurname + enteredTopic + enteredMessage
+      enteredName + enteredEmail + enteredTopic + enteredMessage
     );
 
     setFormIsValid(
       emptyValidation(
-        enteredName + enteredSurname + enteredTopic + enteredMessage
+        enteredName + enteredEmail + enteredTopic + enteredMessage
       )
     );
 
@@ -48,8 +88,23 @@ const FooterForm = () => {
     if (!formIsValid) {
       return;
     } else {
-      const topic = `${enteredName} ${enteredSurname} - ${enteredTopic}`;
-      sendEmail(topic, enteredMessage);
+      const wasSent = await sendEmail(
+        enteredTopic,
+        enteredMessage,
+        enteredEmail,
+        enteredName,
+        isEnglish
+      );
+
+      if (wasSent) {
+        nameRef.current.value = '';
+        messageRef.current.value = '';
+        subjectRef.current.value = '';
+        emailRef.current.value = '';
+        console.log('CLEAR');
+      } else {
+        console.log('MISTAKE');
+      }
     }
   };
 
@@ -65,13 +120,15 @@ const FooterForm = () => {
             ref={nameRef}
           />
           <Input
-            title={isEnglish ? "Surname" : "Pavardė"}
+            title={isEnglish ? "Email" : "El-paštas"}
             placeholder={
-              isEnglish ? "Enter your surname" : "Įveskite savo pavardę"
+              isEnglish
+                ? "Enter your email address"
+                : "Įveskite savo el-pašto adresą"
             }
-            key="surname"
-            onValidate={emptyValidation}
-            ref={surnameRef}
+            key="email"
+            onValidate={emailValidation}
+            ref={emailRef}
           />
         </div>
         <Input
@@ -83,8 +140,11 @@ const FooterForm = () => {
           onValidate={emptyValidation}
           ref={subjectRef}
         />
-        <Input
-          title={isEnglish ? "Message" : "Žinutė"}
+        <label className="textarea-label">
+          {isEnglish ? "Message" : "Žinutė"}
+        </label>
+        <textarea
+          rows={10}
           placeholder={isEnglish ? "Enter message content" : "Įveskite žinutę"}
           key="message"
           onValidate={emptyValidation}
@@ -97,7 +157,15 @@ const FooterForm = () => {
               : "Neteisingai įvesti duomenys"}
           </p>
         )}
-        <button type="submit">{isEnglish ? "Send" : "Siųsti"}</button>
+        <button type="submit">
+          {isEnglish
+            ? loading
+              ? "Siunčiama..."
+              : "Send"
+            : loading
+            ? "Sending..."
+            : "Siųsti"}
+        </button>
       </form>
     </div>
   );
