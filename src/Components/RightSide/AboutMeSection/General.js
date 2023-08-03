@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import { Transition } from "react-transition-group";
+
+import React, { useState, useContext } from "react";
 
 import "./General.css";
 
@@ -6,31 +8,17 @@ import { languageCtx } from "../../store/LanguageContext";
 
 const General = () => {
   const [isExtended, setIsExtended] = useState(false);
-  const [isFadedIn, setIsFadedIn] = useState(false);
 
   const languageContext = useContext(languageCtx);
   const isEnglish = languageContext.isEnglish;
 
-  useEffect(() => {
-    if (isExtended) {
-      requestAnimationFrame(() => {
-        setIsFadedIn(true);
-      });
-    } else {
-      setIsFadedIn(false);
-    }
-  }, [isExtended]);
-
   const extensionHandler = () => {
-    setIsExtended(!isExtended);
+    setIsExtended((prevIsExtended) => !prevIsExtended);
   };
 
-  let pageContent;
-  if (isExtended === false) {
-    pageContent = <div className="not-extended-placeholder" id="general"></div>;
-  } else {
-    pageContent = isEnglish ? (
-      <p className={`general-info ${isFadedIn ? "fade-in" : ""}`}>
+  const pageContent = (cssClasses) =>
+    isEnglish ? (
+      <p className={cssClasses.join(" ")}>
         Hey! <br />
         <br /> I'm a 19-year-old aspiring developer with a passion for coding
         and a zest for life. When I'm not immersed in lines of code, you'll
@@ -50,14 +38,14 @@ const General = () => {
         my mind and body helps me stay energized and productive.
       </p>
     ) : (
-      <p className={`general-info ${isFadedIn ? "fade-in" : ""}`}>
+      <p className={cssClasses.join(" ")}>
         Sveiki! <br />
         <br /> Esu 19 metų jaunuolis su didele aistra programavimui. Kai
         neprogramuoju dažnai žaidžiu krepšinį, einu į sporto salę ar važinėju
-        dviračiu. Dar laisvalaikiu skaitau knygas bei esu didelis fantastinių
-        filmų megėjas.
+        dviračiu, laisvalaikiu skaitau knygas bei esu didelis fantastinių filmų
+        megėjas.
         <br />
-        <br /> Esu introvertas, todėl dažniausia elgiuose ramiai, santūriai ar
+        <br /> Esu intravertas, todėl dažniausia elgiuose ramiai, santūriai ar
         net droviai. Esu atsakingas ir punktualus, niekada neveluoju, o duotus
         darbus visada atlieku geriausiai, kiek galiu, iki duoto laiko limito.
         Mano intravertiškumas kiek apsunkina paprastą bendravimą bei pažinčių
@@ -68,11 +56,10 @@ const General = () => {
         Aš itin duomiuose dirbtiniu intelektu, kriptovaliutomis bei šių
         technologijų pritaikymu realiame gyvenime. Šis susidomėjimas man kilo
         dar būnant 15 metų, pradėjus žaisti kompiuterinius žaidimus, todėl
-        šiomis technologijomis domiuosi tikrai pakankamai ilgą laiką, o ne tik
-        nuo programų kaip ChatGPT paleidimo.
+        šiomis technologijomis domiuosi pakankamai ilgą laiką.
       </p>
     );
-  }
+  // }
   return (
     <>
       <button className="extension-button" onClick={extensionHandler}>
@@ -80,7 +67,22 @@ const General = () => {
           ? "Hey! Click here to learn more about my personality and hobbies!"
           : "Paspaukite norėdami sužinoti daugiau apie mano asmenybę."}
       </button>
-      {pageContent}
+      <Transition unmountOnExit mountOnEnter in={isExtended} timeout={500}>
+        {(state) => {
+          console.log(state);
+          const cssClasses = [
+            "general-info",
+            state === "entering"
+              ? "fade-in"
+              : state === "exiting"
+              ? "fade-out"
+              : state === "entered"
+              ? "shown"
+              : " ",
+          ];
+          return pageContent(cssClasses);
+        }}
+      </Transition>
     </>
   );
 };

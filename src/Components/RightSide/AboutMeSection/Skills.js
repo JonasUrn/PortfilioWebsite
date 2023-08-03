@@ -48,7 +48,7 @@ const courses = (isEnglish) => {
     {
       course: "React - The Complete Guide 2023 (incl. React Router & Redux)",
       programmingLanguages: ["Javascript", "HTML", "CSS"],
-      otherSkills: ["React"],
+      otherSkills: ["React.JS", "Next.JS", "Redux", "CSS Tailwind"],
       logoPath: "../react-logo-removebg-preview.png",
       certificate: null,
       caption: reactCaption,
