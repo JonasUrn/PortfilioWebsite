@@ -7,6 +7,7 @@ import { languageCtx } from "../../store/LanguageContext";
 
 import PythonCertificate from "../../../Assets/python.pdf";
 import FlutterCertificate from "../../../Assets/flutter.pdf";
+import ReactCertificate from '../../../Assets/react.pdf';
 
 import SkillsTimeline from "./SkillsTimeline";
 
@@ -17,9 +18,6 @@ const courses = (isEnglish) => {
   const solidityCaption = isEnglish
     ? "(Only the very basics)"
     : "(Tik pradmenys)";
-  const reactCaption = isEnglish
-    ? "(Currently in learning process)"
-    : "(Dabar mokausi)";
   return [
     {
       course: "100 Days of Code: The Complete Python Pro Bootcamp for 2023",
@@ -50,8 +48,8 @@ const courses = (isEnglish) => {
       programmingLanguages: ["Javascript", "HTML", "CSS"],
       otherSkills: ["React.JS", "Next.JS", "Redux", "CSS Tailwind"],
       logoPath: "../react-logo-removebg-preview.png",
-      certificate: null,
-      caption: reactCaption,
+      certificate: ReactCertificate,
+      caption: null,
     },
   ];
 };
@@ -109,58 +107,6 @@ const Skills = () => {
           ? "Courses finished and programming skills"
           : "Baigti programavimo kursai bei įgūdžiai"}
       </h3>
-      {/* <table>
-        <thead>
-          <tr>
-            {!isSmall && <th className="logo-cell"></th>}
-            <th className="course-cell">
-              {isEnglish ? "Course" : "Kurso pavadinimas"}
-            </th>
-            <th className="skill-cell">
-              {isEnglish ? "Programming languages" : "Programavimo kalbos"}
-            </th>
-            <th className="skill-cell">
-              {isEnglish ? "Other valuable skills" : "Kiti įgyti įgūdžiai"}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {courses(isEnglish).map((course) => {
-            return (
-              <tr key={course.course}>
-                {!isSmall && (
-                  <td className="logo-cell">
-                    <img src={course.logoPath} alt={course.course} />
-                  </td>
-                )}
-                <td className="course-cell">
-                  <h4 className="course-title">{course.course}</h4>
-                  {course.certificate !== null ? (
-                    <button
-                      className="download-btn"
-                      onClick={() => handleDownload(course.certificate)}
-                    >
-                     {isEnglish ? 'Download certificate' : 'Siųsti sertifikatą'} 
-                    </button>
-                  ) : (
-                    <></>
-                  )}
-                </td>
-                <td className="skill-cell">
-                  {course.programmingLanguages.map((language) => {
-                    return <p key={language}>{language}</p>;
-                  })}
-                </td>
-                <td className="skill-cell">
-                  {course.otherSkills.map((skill) => {
-                    return <p key={skill}>{skill}</p>;
-                  })}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table> */}
       <SkillsTimeline skills={courses} isEnglish={isEnglish} />
       {captionContent(isEnglish)}
     </div>
