@@ -9,6 +9,7 @@ import AboutMeSection from "./AboutMeSection/AboutMeSection";
 import Projects from "./Projects/Projects";
 import BiggestProject from "./Projects/BiggestProject";
 import LanguageSelector from "./Header/LanguageSelector";
+import Tools from "./Projects/Tools";
 
 const RightSide = () => {
   return (
@@ -19,6 +20,7 @@ const RightSide = () => {
         <AboutMeSection />
         <Projects />
         <BiggestProject />
+        <Tools />
       </div>
     </React.Fragment>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-scroll";
 
 import "./LeftSide.css";
 
@@ -8,21 +9,21 @@ const secondaryList = (isEnglish, hide) => {
   return (
     <React.Fragment>
       <li>
-        <a href="#about-me" onClick={hide}>About me</a>
+        <Link to="#about-me" onClick={hide}>About me</Link>
       </li>
       <ul className="secondary-list">
         <li>
-          <a href="#education" onClick={hide}>{isEnglish ? "Education" : "Išsilavinimas"}</a>
+          <Link to="#education" onClick={hide}>{isEnglish ? "Education" : "Išsilavinimas"}</Link>
         </li>
         <li>
-          <a href="#work" onClick={hide}>
+          <Link to="#work" onClick={hide}>
             {isEnglish ? "Work / Voluntary experience" : "Darbo patirtis"}
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#courses" onClick={hide}>
+          <Link to="#courses" onClick={hide}>
             {isEnglish ? "Courses finished" : "Baigti kursai"}
-          </a>
+          </Link>
         </li>
       </ul>
     </React.Fragment>
@@ -33,14 +34,14 @@ const navigationContent = (isEnglish, hide) => {
   return (
     <ul>
       <li>
-        <a href="#home" onClick={hide}>{isEnglish ? "Home" : "Pagrindinis"}</a>
+        <Link to="#home" onClick={hide}>{isEnglish ? "Home" : "Pagrindinis"}</Link>
       </li>
       {secondaryList(isEnglish, hide)}
       <li>
-        <a href="#projects" onClick={hide}>{isEnglish ? "Projects" : "Projektai"}</a>
+        <Link to="#projects" onClick={hide}>{isEnglish ? "Projects" : "Projektai"}</Link>
       </li>
       <li>
-        <a href="#footer" onClick={hide}>{isEnglish ? "Contacts" : "Kontaktai"}</a>
+        <Link to="#footer" onClick={hide}>{isEnglish ? "Contacts" : "Kontaktai"}</Link>
       </li>
     </ul>
   );
