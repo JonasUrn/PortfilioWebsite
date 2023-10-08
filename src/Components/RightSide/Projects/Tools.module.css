@@ -1,53 +1,77 @@
+.toolsSection h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: auto;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.toolsSection hr {
+  margin-top: 2%;
+  margin-bottom: 1%;
+  border: none;
+  border-top: 2px solid #fff;
+  width: 100%;
+}
+
+.toolsSection h4 {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 5%;
+    font-weight: normal;
+}
+
 .tools {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    align-items: center;
-    gap: 10;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 10;
 }
 
 .tool {
-    margin-bottom: 10%;
-    width: 80%;
-    aspect-ratio: 1 / 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10%;
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
 
 .tool img {
-    width: 50%;
-    margin: 0 auto;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .tool p {
-    text-align: center;
-    font-size: 1.25rem;
-    font-weight: bold;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .toolsTitle {
-    margin: 5% auto 5% 2%;
-    font-weight: bold;
+  margin: 5% auto 5% 2%;
+  font-weight: bold;
 }
 
 @media screen and (width <= 750px) {
-    .tools {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .tools {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (width <= 500px) {
-    .tools {
-        margin-left: 8%;
-    }
+  .tools {
+    margin-left: 8%;
+  }
 
-    .toolsTitle {
-        font-size: 1.5rem;
-        margin: 5% auto;
-    }
+  .toolsTitle {
+    font-size: 1.5rem;
+    margin: 5% auto;
+  }
 }

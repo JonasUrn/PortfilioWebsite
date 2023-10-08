@@ -15,7 +15,7 @@ const aboutParagraph = (isEnglish) => {
       contracts made by my friend to create and mint NFTs. This website is now
       called MintMasterAI and runs on the web as any other website. Although the
       website is completed, my goal for the summer of 2023 is to use Flutter to
-      build mobile app for this website.
+      build mobile app for this website. (app under maintenance)
     </p>
   ) : (
     <p>
@@ -28,7 +28,7 @@ const aboutParagraph = (isEnglish) => {
       Smart Contracts, kurie atlieka kriptovaliutų pervedimus bei NFT siuntimus.
       Ši svetainė dabar vadinama MintMasterAI ir veikia internete kaip bet kuri
       kita svetainė. Nors svetainė yra baigtaa, mano tikslas 2023 m. vasarą yra
-      naudoti „Flutter“ ir sukurti mobiliąją programėlę šiai svetainei.
+      naudoti „Flutter“ ir sukurti mobiliąją programėlę šiai svetainei. (svetainė šiuo metu tvarkoma)
     </p>
   );
 };
