@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 
 import "./BiggestProject.css";
+import classes from "../../../General.module.css";
 
 import { languageCtx } from "../../store/LanguageContext";
 
@@ -28,7 +29,8 @@ const aboutParagraph = (isEnglish) => {
       Smart Contracts, kurie atlieka kriptovaliutų pervedimus bei NFT siuntimus.
       Ši svetainė dabar vadinama MintMasterAI ir veikia internete kaip bet kuri
       kita svetainė. Nors svetainė yra baigtaa, mano tikslas 2023 m. vasarą yra
-      naudoti „Flutter“ ir sukurti mobiliąją programėlę šiai svetainei. (svetainė šiuo metu tvarkoma)
+      naudoti „Flutter“ ir sukurti mobiliąją programėlę šiai svetainei.
+      (svetainė šiuo metu tvarkoma)
     </p>
   );
 };
@@ -44,11 +46,15 @@ const mintMasterLogo = (
 );
 
 const websiteLink = (isEnglish) => {
-  return isEnglish ? <p>
-    Link to the website: <a href="https://mintmasterai.com">MintMasterAI</a>
-  </p> : <p>
-    Nuoroda į svetainę: <a href="https://mintmasterai.com">MintMasterAI</a>
-  </p>
+  return isEnglish ? (
+    <p>
+      Link to the website: <a href="https://mintmasterai.com">MintMasterAI</a>
+    </p>
+  ) : (
+    <p>
+      Nuoroda į svetainę: <a href="https://mintmasterai.com">MintMasterAI</a>
+    </p>
+  );
 };
 
 const BiggestProject = () => {
@@ -75,7 +81,14 @@ const BiggestProject = () => {
 
   return (
     <div className="biggest-project-wrapper" id="biggest-project">
-      <h3 className="biggest-project-title">{isEnglish ? 'My biggest project' : 'Didžiausias projektas'}</h3>
+      <h3 className={classes.sectionTitle}>
+        {isEnglish ? "My biggest project" : "Didžiausias projektas"}
+      </h3>
+      <h4 className={classes.sectionCaption}>
+        {isEnglish
+          ? "My biggest project - a startup created together with a friend"
+          : "Didžiausias mano projektas - startuolis, bandytas kurti kartu su draugu"}
+      </h4>
       <div
         className={isSmall ? "biggest-project-card-s" : "biggest-project-card"}
       >

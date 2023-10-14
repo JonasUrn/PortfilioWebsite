@@ -1,0 +1,22 @@
+.sectionTitle {
+    text-align: left;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 3px solid #fff;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 0.5%;
+    text-transform: uppercase;
+}
+
+.sectionCaption {
+    padding-top: 0.5%;
+    font-size: 1rem;
+    margin-top: 0;
+    font-weight: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-bottom: 5%;
+}

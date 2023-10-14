@@ -20,49 +20,51 @@ const SkillsTimelineElement = ({ skill, isEnglish }) => {
     link.click();
   }
   return (
-    <VerticalTimelineElement
-      contentStyle={{ background: "#1d1836", color: "#fff" }}
-      contentArrowStyle={{
-        borderRight: "7px solid £232631",
-        margin: "auto -0.75rem",
-      }}
-      iconStyle={{
-        background: "#383E56",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-      icon={
-        <div className="icon-div">
-          <img src={skill.logoPath} alt={skill.course} className="icon" />
+      <VerticalTimelineElement
+        contentStyle={{ background: "#1d1836", color: "#fff" }}
+        contentArrowStyle={{
+          borderRight: "7px solid £232631",
+          margin: "auto -0.75rem",
+        }}
+        iconStyle={{
+          background: "#383E56",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        icon={
+          <div className="icon-div">
+            <img src={skill.logoPath} alt={skill.course} className="icon" />
+          </div>
+        }
+      >
+        <div className="timeline-element-wrapper">
+          <h3>{skill.course}</h3>
+          <p className="skill-caption">
+            {skill.caption !== null && skill.caption}
+          </p>
+          <h4>{isEnglish ? "Programming languages" : "Programavimo kalbos"}</h4>
+          <ul className="skills-list-x">
+            {skill.programmingLanguages.map((pl) => {
+              return <li>{pl}</li>;
+            })}
+          </ul>
+          <h4>{isEnglish ? "Other useful tools" : "Kiti naudingi įgūdžiai"}</h4>
+          <ul className="skills-list-x">
+            {skill.otherSkills.map((os) => {
+              return <li>{os}</li>;
+            })}
+          </ul>
+          {skill.certificate !== null && skill.certificate !== undefined && (
+            <button
+              className="download-button"
+              onClick={() => handleDownload(skill.certificate)}
+            >
+              {isEnglish ? "Download certificate" : "Siųsti sertifikatą"}
+            </button>
+          )}
         </div>
-      }
-    >
-      <div className="timeline-element-wrapper">
-        <h3>{skill.course}</h3>
-        <p className="skill-caption">{skill.caption !== null && skill.caption}</p>
-        <h4>{isEnglish ? "Programming languages" : "Programavimo kalbos"}</h4>
-        <ul className="skills-list-x">
-          {skill.programmingLanguages.map((pl) => {
-            return <li>{pl}</li>;
-          })}
-        </ul>
-        <h4>{isEnglish ? "Other useful tools" : "Kiti naudingi įgūdžiai"}</h4>
-        <ul className="skills-list-x">
-          {skill.otherSkills.map((os) => {
-            return <li>{os}</li>;
-          })}
-        </ul>
-        {skill.certificate !== null && skill.certificate !== undefined && (
-          <button
-            className="download-button"
-            onClick={() => handleDownload(skill.certificate)}
-          >
-            {isEnglish ? "Download certificate" : "Siųsti sertifikatą"}
-          </button>
-        )}
-      </div>
-    </VerticalTimelineElement>
+      </VerticalTimelineElement>
   );
 };
 

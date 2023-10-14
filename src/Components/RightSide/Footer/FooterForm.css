@@ -39,13 +39,16 @@ form button:hover {
 }
 
 textarea {
-  width: 100%;
+  width: 90%;
   margin: 5% auto;
   border-radius: 15px;
   text-align: left;
   padding: 2%;
   background-color: #fff;
   border: 1px solid #fff;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 90%;
+  max-height: 25rem;
 }
 
 .textarea-label {

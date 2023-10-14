@@ -2,10 +2,11 @@ import { useContext } from "react";
 
 import "./AboutMeGeneralStyles.css";
 import "./EducationContent.css";
+import classes from "../../../General.module.css";
 
 import { languageCtx } from "../../store/LanguageContext";
 
-import MaturityCertificate from "../../../Assets/brandos_atestatas.pdf"
+import MaturityCertificate from "../../../Assets/brandos_atestatas.pdf";
 
 const englishEducationList = (
   <ul>
@@ -57,7 +58,7 @@ const lithuanianExamResults = (
     <p className="exam-title">Brandos egzaminų rezultatai:</p>
     <ul className="exam-list">
       <li>Matematika: 100 / 100</li>
-      <li>Anglų  kalba: 100 / 100</li>
+      <li>Anglų kalba: 100 / 100</li>
       <li>Lietuvių kalba ir literatūra: 100 / 100</li>
       <li>IT: 93 / 100</li>
     </ul>
@@ -88,14 +89,20 @@ const EducationContent = () => {
 
   const diplomaContent = isEnglish ? (
     <p className="caption-education">
-      Press <span className="underline" onClick={certificateDownloadHandler}>HERE</span> to view my 'Brandos
-      atestatas' (Maturity Certificate - diploma given upon finishing
-      highschool)
+      Press{" "}
+      <span className="underline" onClick={certificateDownloadHandler}>
+        HERE
+      </span>{" "}
+      to view my 'Brandos atestatas' (Maturity Certificate - diploma given upon
+      finishing highschool)
     </p>
   ) : (
     <p className="caption-education">
-      Spauskite <span className="underline" onClick={certificateDownloadHandler}>ČIA</span> norėdami peržiūrėti
-      Brandos Atestatą.
+      Spauskite{" "}
+      <span className="underline" onClick={certificateDownloadHandler}>
+        ČIA
+      </span>{" "}
+      norėdami peržiūrėti Brandos Atestatą.
     </p>
   );
 
@@ -112,7 +119,14 @@ const EducationContent = () => {
 
   return (
     <div className="about-me-content-wrapper" id="education">
-      <h3>{isEnglish ? "Education" : "Išsilavinimas"}</h3>
+      <h3 className={classes.sectionTitle}>
+        {isEnglish ? "Education" : "Išsilavinimas"}
+      </h3>
+      <h4 className={classes.sectionCaption}>
+        {isEnglish
+          ? "Where and what education did I acquire"
+          : "Kur ir kokį išsilavinimą įgijau"}
+      </h4>
       {educationList}
       {captionContent}
       {examContent}

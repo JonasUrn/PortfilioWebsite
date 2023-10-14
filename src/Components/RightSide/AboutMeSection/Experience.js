@@ -1,6 +1,7 @@
 import { useContext } from "react";
 
 import "./AboutMeGeneralStyles.css";
+import classes from "../../../General.module.css";
 
 import { languageCtx } from "../../store/LanguageContext";
 
@@ -20,7 +21,8 @@ const Experience = () => {
   );
   return (
     <div className="about-me-content-wrapper" id="work">
-      <h3>{isEnglish ? "Work / Voluntary experience" : "Darbo patirtis"}</h3>
+      <h3 className={classes.sectionTitle}>{isEnglish ? "Work / Voluntary experience" : "Darbo patirtis"}</h3>
+      <h4 className={classes.sectionCaption}>{isEnglish ? "My experience working or volunteering in IT sphere" : "Mano darbo ir savanorystės patirtis IT sferoje"}</h4>
       <ul>
         <li>
           {isEnglish ? "None." : "Duotu momentu neturiu darbo patirties."}

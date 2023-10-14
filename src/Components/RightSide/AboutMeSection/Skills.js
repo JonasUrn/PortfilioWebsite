@@ -2,12 +2,13 @@ import { useState, useEffect, useCallback, useContext } from "react";
 
 import "./AboutMeGeneralStyles.css";
 import "./Skills.css";
+import classes from "../../../General.module.css";
 
 import { languageCtx } from "../../store/LanguageContext";
 
 import PythonCertificate from "../../../Assets/python.pdf";
 import FlutterCertificate from "../../../Assets/flutter.pdf";
-import ReactCertificate from '../../../Assets/react.pdf';
+import ReactCertificate from "../../../Assets/react.pdf";
 
 import SkillsTimeline from "./SkillsTimeline";
 
@@ -102,11 +103,16 @@ const Skills = () => {
 
   return (
     <div className="about-me-content-wrapper" id="courses">
-      <h3>
+      <h3 className={classes.sectionTitle}>
         {isEnglish
           ? "Courses finished and programming skills"
           : "Baigti programavimo kursai bei įgūdžiai"}
       </h3>
+      <h4 className={classes.sectionCaption}>
+        {isEnglish
+          ? "What programming courses I have finished and what coding languages I am familiar with"
+          : "Kokius programavimo kursus esu baigęs ir su kokiomis programavimo kalbomis esu dirbęs"}
+      </h4>
       <SkillsTimeline skills={courses} isEnglish={isEnglish} />
       {captionContent(isEnglish)}
     </div>

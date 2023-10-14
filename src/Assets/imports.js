@@ -7,7 +7,7 @@ import tailwind from "./tailwind.png";
 
 import flutter from "./flutter.png";
 import python from "./python.png";
-import flask from './flask.jpg';
+import flask from './flask.png';
 import bootstrap from './bootstrap.png';
 
 export {
