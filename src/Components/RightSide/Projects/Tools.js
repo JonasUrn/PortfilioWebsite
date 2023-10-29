@@ -37,7 +37,6 @@ const Tools = () => {
             boxShadow: tech.config,
             p: 0,
           };
-          console.log(tiltStyle);
           return (
             <Tilt
               options={defaultOptions}
