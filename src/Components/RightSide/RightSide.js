@@ -10,6 +10,7 @@ import Projects from "./Projects/Projects";
 import BiggestProject from "./Projects/BiggestProject";
 import LanguageSelector from "./Header/LanguageSelector";
 import Tools from "./Projects/Tools";
+import Learning from "./Projects/Learning";
 
 const RightSide = () => {
   return (
@@ -21,6 +22,7 @@ const RightSide = () => {
         <Projects />
         <BiggestProject />
         <Tools />
+        <Learning />
       </div>
     </React.Fragment>
   );

@@ -9,6 +9,8 @@ import flutter from "./flutter.png";
 import python from "./python.png";
 import flask from './flask.png';
 import bootstrap from './bootstrap.png';
+import net from "./NET.png";
+import cs from "./cs.png";
 
 export {
   css,
@@ -21,4 +23,6 @@ export {
   python,
   flask,
   bootstrap,
+  cs,
+  net
 };

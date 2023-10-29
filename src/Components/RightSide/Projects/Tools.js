@@ -3,6 +3,7 @@ import classes from "./Tools.module.css";
 import { Tilt } from "react-tilt";
 import { useContext } from "react";
 
+import textClasses from "../../../General.module.css";
 import { languageCtx } from "../../store/LanguageContext";
 
 const defaultOptions = {
@@ -22,11 +23,10 @@ const Tools = () => {
   const isEnglish = languageContext.isEnglish;
   return (
     <div className={classes.toolsSection} id="technologies">
-      <h2 className={classes.toolsTitle}>
+      <h3 className={textClasses.sectionTitle}>
         {isEnglish ? "Technologies" : "Technologijos"}
-      </h2>
-      <hr></hr>
-      <h4>
+      </h3>
+      <h4 className={textClasses.sectionCaption}>
         {isEnglish
           ? "Technologies I am familiar with"
           : "Technologijos, kurias esu naudojęs"}

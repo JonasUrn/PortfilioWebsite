@@ -9,6 +9,8 @@ import {
   css,
   html,
   javascript,
+  cs,
+  net,
 } from "./imports.js";
 
 const technologies = [
@@ -25,12 +27,12 @@ const technologies = [
   {
     name: "Flask",
     icon: flask,
-    config: "0px 0px 5px 5px rgba(255, 255, 255, 0.7)"
+    config: "0px 0px 5px 5px rgba(255, 255, 255, 0.7)",
   },
   {
     name: "Bootstrap",
     icon: bootstrap,
-    config: "0px 0px 5px 5px rgb(163, 26, 149)"
+    config: "0px 0px 5px 5px rgb(163, 26, 149)",
   },
   {
     name: "HTML 5",
@@ -45,12 +47,12 @@ const technologies = [
   {
     name: "JavaScript",
     icon: javascript,
-    config: "0px 0px 5px 5px rgb(255, 217, 0)"
+    config: "0px 0px 5px 5px rgb(255, 217, 0)",
   },
   {
     name: "React JS",
     icon: reactjs,
-    config: "0px 0px 5px 5px rgb(0, 110, 255)"
+    config: "0px 0px 5px 5px rgb(0, 110, 255)",
   },
   {
     name: "Redux",
@@ -60,8 +62,21 @@ const technologies = [
   {
     name: "Tailwind CSS",
     icon: tailwind,
-    config: "0px 0px 5px 5px rgb(0, 110, 255)"
+    config: "0px 0px 5px 5px rgb(0, 110, 255)",
   },
 ];
 
-export { technologies };
+const learning = [
+  {
+    name: "C#",
+    icon: cs,
+    config: "0px 0px 5px 5px rgb(163, 26, 149)",
+  },
+  {
+    name: ".NET",
+    icon: net,
+    config: "0px 0px 5px 5px rgb(163, 26, 149)",
+  },
+];
+
+export { technologies, learning };

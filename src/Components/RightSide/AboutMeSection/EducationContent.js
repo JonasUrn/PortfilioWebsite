@@ -87,25 +87,6 @@ const EducationContent = () => {
 
   const captionContent = isEnglish ? englishCaption : lithuanianCaption;
 
-  const diplomaContent = isEnglish ? (
-    <p className="caption-education">
-      Press{" "}
-      <span className="underline" onClick={certificateDownloadHandler}>
-        HERE
-      </span>{" "}
-      to view my 'Brandos atestatas' (Maturity Certificate - diploma given upon
-      finishing highschool)
-    </p>
-  ) : (
-    <p className="caption-education">
-      Spauskite{" "}
-      <span className="underline" onClick={certificateDownloadHandler}>
-        ČIA
-      </span>{" "}
-      norėdami peržiūrėti Brandos Atestatą.
-    </p>
-  );
-
   const examContent = isEnglish ? englishExamResults : lithuanianExamResults;
 
   function certificateDownloadHandler() {
@@ -130,7 +111,6 @@ const EducationContent = () => {
       {educationList}
       {captionContent}
       {examContent}
-      {diplomaContent}
     </div>
   );
 };
