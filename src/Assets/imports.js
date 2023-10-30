@@ -4,13 +4,14 @@ import javascript from "./javascript.png";
 import reactjs from "./reactjs.png";
 import redux from "./redux.png";
 import tailwind from "./tailwind.png";
-
 import flutter from "./flutter.png";
 import python from "./python.png";
 import flask from './flask.png';
 import bootstrap from './bootstrap.png';
 import net from "./NET.png";
 import cs from "./cs.png";
+
+import uturex from "./uturex.png";
 
 export {
   css,
@@ -24,5 +25,6 @@ export {
   flask,
   bootstrap,
   cs,
-  net
+  net,
+  uturex
 };

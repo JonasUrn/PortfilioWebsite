@@ -11,6 +11,7 @@ import {
   javascript,
   cs,
   net,
+  uturex,
 } from "./imports.js";
 
 const technologies = [
@@ -79,4 +80,16 @@ const learning = [
   },
 ];
 
-export { technologies, learning };
+const webProjects = [
+  {
+    title: "Uturex",
+    image: uturex,
+    description:
+      "A freelancing page for me and my friend. This website was created to show off our web-design and programming skills as well as advertise our brand.",
+    key: "web1",
+    color: "0px 0px 5px 5px rgb(208, 16, 246)",
+    link: "https://www.uturex.com",
+  },
+];
+
+export { technologies, learning, webProjects };
