@@ -25,8 +25,8 @@ const InfoCardTextContent = () => {
   const instagramHandler = (event) => {
     window.open("https://www.instagram.com/jonas_urn/?next=%2F", "_blank");
   };
-  const twitterHandler = (event) => {
-    window.open("https://twitter.com/CaptainCutlet", "_blank");
+  const linkedinHandler = (event) => {
+    window.open("https://www.linkedin.com/in/jonas-urnezius/", "_blank");
   };
   const githubHandler = (event) => {
     window.open("https://github.com/CaptainCutlet", "_blank");
@@ -53,10 +53,10 @@ const InfoCardTextContent = () => {
           onClick={instagramHandler}
         />
         <FontAwesomeIcon
-          icon={["fab", "twitter"]}
+          icon={["fab", "linkedin"]}
           size="lg"
           className="info-icon"
-          onClick={twitterHandler}
+          onClick={linkedinHandler}
         />
         <FontAwesomeIcon
           icon={["fab", "github"]}

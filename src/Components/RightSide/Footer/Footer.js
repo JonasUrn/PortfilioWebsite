@@ -11,13 +11,14 @@ const Footer = () => {
 
   const subtitleContent = isEnglish ? (
     <h5>
-      You can contact me via any social media apps found in the introduction
-      card, or by filling out the form below
+      You can contact me via email provided below, or by filling out the form below <br />
+      Email: jonasurnezius@gmail.com
     </h5>
   ) : (
     <h5>
-      Su manimi galite susisiekdami naudodami visus socialinius tinklus
-      nurodytus pradžioje arba užpildydami apačioje esančią formą
+      Su manimi galite susisiekti naudodami žemiau pateiktą email'o adresą
+      arba užpildydami apačioje esančią formą
+      Email: jonasurnezius@gmail.com
     </h5>
   );
 

@@ -9,27 +9,20 @@ import { languageCtx } from "../../store/LanguageContext";
 import MaturityCertificate from "../../../Assets/brandos_atestatas.pdf";
 
 const englishEducationList = (
-  <ul>
-    <li>Primary School: Šiauliai Centro Pradinė primary school</li>
-    <li>Secondary School: Šiauliai "Juventa" secondary school</li>
-    <li>Highschool: Šiauliai Julius Janonis gymnasium</li>
+  <ul className="exam-list">
     <li>
-      University: <p className="underlined">applied for</p> Artificial
-      Intelligence course in Kaunas University of Technology
+      University: Kaunas Technology University (KTU) - BA Artificial Intelligence course. 
     </li>
+    <li>Highschool: Šiauliai Julius Janonis gymnasium</li>
   </ul>
 );
 
 const lithuanianEducationList = (
-  <ul>
-    <li>Pradinė mokykla: Šiaulių Centro Pradinė mokykla</li>
-    <li>Porgimnazija: Šiaulių "Juventos" progimnazija</li>
-    <li>Gimnazija: Šiaulių Julius Janonio gimnazija</li>
+  <ul className="exam-list">
     <li>
-      Universitetas:{" "}
-      <p className="underlined">esu padavęs prašymą studijuoti</p> dirbtinį
-      intelektą Kauno Technologijų universitete (KTU);
+      Universitetas: Kauno Technologijos Universitetas (KTU) - BA Dirbtinio Intelekto kursas.
     </li>
+    <li>Gimnazija: Šiaulių Julius Janonio gimnazija</li>
   </ul>
 );
 

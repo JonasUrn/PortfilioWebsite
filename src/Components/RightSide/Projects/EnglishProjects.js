@@ -21,6 +21,27 @@ const allProjectsEnglish = [
       ],
     },
     {
+      title: "Web Development Projects",
+      projects: [
+        {
+          projectTitle: "Failed NFT startup",
+          projectDetails: "React, Next.js, Javascript, Tailwind, Flask (Python), Solidity",
+          projectDescription:
+            "Website for my failed startup. Backend created using Flask, frontend created with React and smart contracts written with Solidity.",
+          githubLink: "https://github.com/CaptainCutlet/MintMasterAI",
+          imageUrl: "https://www.speakeragency.co.uk/media/h4shzgp0/387840464-690x460.jpg",
+        },
+        {
+          projectTitle: "Freelancing Web Developer Website",
+          projectDetails: "React, Next.js, Javascript, Tailwind",
+          projectDescription:
+            "A website to showcase a made-up web development firm.",
+          githubLink: "https://github.com/CaptainCutlet/Uturex.com",
+          imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4BhpFKCJ0_LAl-WhYLzk-84c-uQCkvKNObg&s",
+        },
+      ],
+    },
+    {
       title: "Python / Flask websites",
       projects: [
         {

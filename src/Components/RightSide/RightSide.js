@@ -7,11 +7,10 @@ import "@fortawesome/react-fontawesome";
 import InfoCard from "./InfoCard";
 import AboutMeSection from "./AboutMeSection/AboutMeSection";
 import Projects from "./Projects/Projects";
-import BiggestProject from "./Projects/BiggestProject";
 import LanguageSelector from "./Header/LanguageSelector";
 import Tools from "./Projects/Tools";
 import Learning from "./Projects/Learning";
-import WebProjects from "./Projects/WebProjects";
+import Languages from "./Projects/languages";
 
 const RightSide = () => {
   return (
@@ -21,9 +20,8 @@ const RightSide = () => {
         <InfoCard />
         <AboutMeSection />
         <Projects />
-        <BiggestProject />
+        <Languages />
         <Tools />
-        <WebProjects />
         <Learning />
       </div>
     </React.Fragment>

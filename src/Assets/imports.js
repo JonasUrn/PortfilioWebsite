@@ -10,6 +10,11 @@ import flask from './flask.png';
 import bootstrap from './bootstrap.png';
 import net from "./NET.png";
 import cs from "./cs.png";
+import dart from "./dart.png"
+import java from "./java.png"
+import django from "./django.png"
+import cryptobanter from "./cryptobanter1.png"
+import invensa from "./invensa1.png"
 
 import uturex from "./uturex.png";
 
@@ -26,5 +31,10 @@ export {
   bootstrap,
   cs,
   net,
-  uturex
+  uturex,
+  dart,
+  java,
+  django,
+  cryptobanter,
+  invensa
 };

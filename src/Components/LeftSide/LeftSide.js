@@ -49,6 +49,11 @@ const navigationContent = (isEnglish, hide) => {
         </Link>
       </li>
       <li>
+        <Link to="languages" onClick={hide} smooth={true}>
+          {isEnglish ? "Programavimo Kalbos" : "Coding Languages"}
+        </Link>
+      </li>
+      <li>
         <Link to="technologies" onClick={hide} smooth={true}>
           {isEnglish ? "Technologies" : "Technologijos"}
         </Link>

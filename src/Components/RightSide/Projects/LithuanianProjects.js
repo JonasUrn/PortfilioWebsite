@@ -21,6 +21,27 @@ const allProjectsLithuanian = [
       ],
     },
     {
+      title: "Interneto Svetainių Projektai",
+      projects: [
+        {
+          projectTitle: "Nepavykęs NFT Start'upas",
+          projectDetails: "React, Next.js, Javascript, Tailwind, Flask (Python), Solidity",
+          projectDescription:
+            "Buvo bandyta padaryti NFT start'upą, tačiau nepavyko. Nepaisant to, gerai padaryta svetainė išliko.",
+          githubLink: "https://github.com/CaptainCutlet/MintMasterAI",
+          imageUrl: "https://www.speakeragency.co.uk/media/h4shzgp0/387840464-690x460.jpg",
+        },
+        {
+          projectTitle: "Freelanci'nimo Svetainė",
+          projectDetails: "React, Next.js, Javascript, Tailwind",
+          projectDescription:
+            "Pavyzdinė svetainė kompanijos, kuri teikia svetainių kūrimo paslaugas.",
+          githubLink: "https://github.com/CaptainCutlet/Uturex.com",
+          imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4BhpFKCJ0_LAl-WhYLzk-84c-uQCkvKNObg&s",
+        },
+      ],
+    },
+    {
       title: "Python / Flask svetainės",
       projects: [
         {
