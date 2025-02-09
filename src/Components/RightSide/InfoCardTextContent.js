@@ -29,7 +29,7 @@ const InfoCardTextContent = () => {
     window.open("https://www.linkedin.com/in/jonas-urnezius/", "_blank");
   };
   const githubHandler = (event) => {
-    window.open("https://github.com/CaptainCutlet", "_blank");
+    window.open("https://github.com/JonasUrn", "_blank");
   };
   const mailHandler = (event) => {
     const emailAddress = 'jonasurnezius@gmail.com';
